@@ -27,7 +27,7 @@
     </style>
 </head>
 <body class="min-h-screen bg-gray-100 ">
-    <header class="border-b-1 border-gray-300 space-y-[20px] py-[40px] w-[80%] mx-auto">
+    <header class="border-b-1 border-gray-300 space-y-[20px] py-[40px] w-[80%] mx-auto sticky top-0 bg-gray-100">
         <h1 class="text-[#002C5C] font-bold text-[32px]">Job Application Tracker</h1>
         <div class="grid grid-cols-3 gap-[16px]">
             <div class="bg-[#FFFFFF] p-[20px] space-y-[15px] rounded-lg">
@@ -36,7 +36,7 @@
             </div>
             <div class="bg-[#FFFFFF] p-[20px] space-y-[15px] rounded-lg">
                 <p class="text-[#323B49] font-medium text-[14px]">Interview</p>
-                <p class="text-[#10B981] font-bold text-[24px]">0</p>
+                <p id="inter-count" class="text-[#10B981] font-bold text-[24px] ">0</p>
             </div>
             <div class="bg-[#FFFFFF] p-[20px] space-y-[15px] rounded-lg">
                 <p class="text-[#323B49] font-medium text-[14px]">Rejected</p>
@@ -59,28 +59,33 @@
         <!-- card div -->
         <div id="all" class="space-y-[30px]">
 
-            <div class="space-y-[15px] bg-white p-[24px] rounded-lg">
-                <div class="flex justify-between">
-                    <div>
-                        <h3 class="text-[#002C5C] font-semibold text-[18px]">Mobile First Corp</h3>
-                       <p class="text-[#64748B]">React Native Developer</p>
+            <div>
+
+                <div class="space-y-[15px] bg-white p-[24px] rounded-lg">
+                    <div class="flex justify-between">
+                        <div>
+                            <h3 class="text-[#002C5C] font-semibold text-[18px]">Mobile First Corp</h3>
+                           <p class="text-[#64748B]">React Native Developer</p>
+                        </div>
+                        <div>
+                            <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                        </div>
                     </div>
-                    <div>
-                        <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                    <p class="text-[#64748B]">Remote • Full-time • $130,000 - $175,000</p>
+                    <div class="space-y-[10px]">
+                        <p class=" text-[#002C5C] font-medium text-[14px] bg-blue-100 max-w-[113px] px-3 py-2 rounded statuss">PENDING</p>
+                        <p class="text-[#323B49] text-[14px]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
                     </div>
-                </div>
-                <p class="text-[#64748B]">Remote • Full-time • $130,000 - $175,000</p>
-                <div class="space-y-[10px]">
-                    <p class="text-[#002C5C] font-medium text-[14px] bg-blue-100 max-w-[113px] px-3 py-2 rounded">NOT APPLIED</p>
-                    <p class="text-[#323B49] text-[14px]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
-                </div>
-                <div class="flex gap-[8px]">
-                    <button class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
-                    <button class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
+                    <div class="flex gap-[8px]">
+                        <button onclick="interBtn('inter-btn1')" id="inter-btn1" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
+                        <button class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="space-y-[15px] bg-white p-[24px] rounded-lg">
+
+            <div>
+                <div class="space-y-[15px] bg-white p-[24px] rounded-lg">
                 <div class="flex justify-between">
                     <div>
                         <h3 class="text-[#002C5C] font-semibold text-[18px]">WebFlow Agency</h3>
@@ -92,16 +97,18 @@
                 </div>
                 <p class="text-[#64748B]">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
                 <div class="space-y-[10px]">
-                    <p class="text-[#002C5C] font-medium text-[14px] bg-blue-100 max-w-[113px] px-3 py-2 rounded">NOT APPLIED</p>
+                    <p class="text-[#002C5C] font-medium text-[14px] bg-blue-100 max-w-[113px] px-3 py-2 rounded statuss">PENDING</p>
                     <p class="text-[#323B49] text-[14px]">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
                 </div>
                 <div class="flex gap-[8px]">
-                    <button class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
+                    <button onclick="interBtn('inter-btn2')" id="inter-btn2" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
                     <button class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
             </div>
+            </div>
 
-            <div class="space-y-[15px] bg-white p-[24px] rounded-lg">
+            <div>
+                <div class="space-y-[15px] bg-white p-[24px] rounded-lg">
                 <div class="flex justify-between">
                     <div>
                         <h3 class="text-[#002C5C] font-semibold text-[18px]">DataViz Solutions</h3>
@@ -113,16 +120,18 @@
                 </div>
                 <p class="text-[#64748B]">Boston, MA • Full-time • $125,000 - $165,000</p>
                 <div class="space-y-[10px]">
-                    <p class="text-[#002C5C] font-medium text-[14px] bg-blue-100 max-w-[113px] px-3 py-2 rounded">NOT APPLIED</p>
+                    <p class="text-[#002C5C] font-medium text-[14px] bg-blue-100 max-w-[113px] px-3 py-2 rounded statuss">PENDING</p>
                     <p class="text-[#323B49] text-[14px]">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
                 </div>
                 <div class="flex gap-[8px]">
-                    <button class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
+                    <button onclick="interBtn('inter-btn3')" id="inter-btn3" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
                     <button class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
             </div>
+            </div>
 
-            <div class="space-y-[15px] bg-white p-[24px] rounded-lg">
+            <div>
+                <div class="space-y-[15px] bg-white p-[24px] rounded-lg">
                 <div class="flex justify-between">
                     <div>
                         <h3 class="text-[#002C5C] font-semibold text-[18px]">CloudFirst Inc</h3>
@@ -134,16 +143,18 @@
                 </div>
                 <p class="text-[#64748B]">Seattle, WA • Full-time • $140,000 - $190,000</p>
                 <div class="space-y-[10px]">
-                    <p class="text-[#002C5C] font-medium text-[14px] bg-blue-100 max-w-[113px] px-3 py-2 rounded">NOT APPLIED</p>
+                    <p class="text-[#002C5C] font-medium text-[14px] bg-blue-100 max-w-[113px] px-3 py-2 rounded statuss">PENDING</p>
                     <p class="text-[#323B49] text-[14px]">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
                 </div>
                 <div class="flex gap-[8px]">
-                    <button class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
+                    <button onclick="interBtn('inter-btn4')" id="inter-btn4" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
                     <button class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
             </div>
+            </div>
 
-            <div class="space-y-[15px] bg-white p-[24px] rounded-lg">
+            <div>
+                <div class="space-y-[15px] bg-white p-[24px] rounded-lg">
                 <div class="flex justify-between">
                     <div>
                         <h3 class="text-[#002C5C] font-semibold text-[18px]">Innovation Labs</h3>
@@ -155,16 +166,18 @@
                 </div>
                 <p class="text-[#64748B]">Austin, TX • Full-time • $110,000 - $150,000</p>
                 <div class="space-y-[10px]">
-                    <p class="text-[#002C5C] font-medium text-[14px] bg-blue-100 max-w-[113px] px-3 py-2 rounded">NOT APPLIED</p>
+                    <p class="text-[#002C5C] font-medium text-[14px] bg-blue-100 max-w-[113px] px-3 py-2 rounded statuss">PENDING</p>
                     <p class="text-[#323B49] text-[14px]">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
                 </div>
                 <div class="flex gap-[8px]">
-                    <button class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
+                    <button onclick="interBtn('inter-btn5')" id="inter-btn5" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
                     <button class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
             </div>
+            </div>
 
-            <div class="space-y-[15px] bg-white p-[24px] rounded-lg">
+           <div>
+             <div class="space-y-[15px] bg-white p-[24px] rounded-lg">
                 <div class="flex justify-between">
                     <div>
                         <h3 class="text-[#002C5C] font-semibold text-[18px]">MegaCorp Solutions</h3>
@@ -176,16 +189,18 @@
                 </div>
                 <p class="text-[#64748B]">New York, NY • Full-time • $130,000 - $170,00</p>
                 <div class="space-y-[10px]">
-                    <p class="text-[#002C5C] font-medium text-[14px] bg-blue-100 max-w-[113px] px-3 py-2 rounded">NOT APPLIED</p>
+                    <p class="text-[#002C5C] font-medium text-[14px] bg-blue-100 max-w-[113px] px-3 py-2 rounded statuss">PENDING</p>
                     <p class="text-[#323B49] text-[14px]">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
                 </div>
                 <div class="flex gap-[8px]">
-                    <button class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
+                    <button onclick="interBtn('inter-btn6')" id="inter-btn6" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
                     <button class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
             </div>
+           </div>
 
-            <div class="space-y-[15px] bg-white p-[24px] rounded-lg">
+            <div>
+                <div class="space-y-[15px] bg-white p-[24px] rounded-lg">
                 <div class="flex justify-between">
                     <div>
                         <h3 class="text-[#002C5C] font-semibold text-[18px]">StartupXYZ</h3>
@@ -197,16 +212,18 @@
                 </div>
                 <p class="text-[#64748B]">Remote • Full-time • $120,000 - $160,000</p>
                 <div class="space-y-[10px]">
-                    <p class="text-[#002C5C] font-medium text-[14px] bg-blue-100 max-w-[113px] px-3 py-2 rounded">NOT APPLIED</p>
+                    <p class="text-[#002C5C] font-medium text-[14px] bg-blue-100 max-w-[113px] px-3 py-2 rounded statuss">PENDING</p>
                     <p class="text-[#323B49] text-[14px]">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
                 </div>
                 <div class="flex gap-[8px]">
-                    <button class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
+                    <button onclick="interBtn('inter-btn7')" id="inter-btn7" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
                     <button class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
             </div>
+            </div>
 
-            <div class="space-y-[15px] bg-white p-[24px] rounded-lg">
+            <div>
+                <div class="space-y-[15px] bg-white p-[24px] rounded-lg">
                 <div class="flex justify-between">
                     <div>
                         <h3 class="text-[#002C5C] font-semibold text-[18px]">TechCorp Industries</h3>
@@ -218,13 +235,14 @@
                 </div>
                 <p class="text-[#64748B]">San Francisco, CA • Full-time • $130,000 - $175,000</p>
                 <div class="space-y-[10px]">
-                    <p class="text-[#002C5C] font-medium text-[14px] bg-blue-100 max-w-[113px] px-3 py-2 rounded">NOT APPLIED</p>
+                    <p class="text-[#002C5C] font-medium text-[14px] bg-blue-100 max-w-[113px] px-3 py-2 rounded statuss">PENDING</p>
                     <p class="text-[#323B49] text-[14px]">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
                 </div>
                 <div class="flex gap-[8px]">
-                    <button class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
+                    <button onclick="interBtn('inter-btn8')" id="inter-btn8" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
                     <button class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
+            </div>
             </div>
 
         </div>

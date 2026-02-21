@@ -28,3 +28,34 @@ function btnColorMain (id){
     onlyAdd.classList.add('bg-[#3B82F6]' , 'text-white');
     
 }
+
+
+function interBtn (id){
+    const getBtn = document.getElementById(id);
+    const getParent = getBtn.parentNode.parentNode.parentNode;
+    const change = getParent.querySelector('.statuss');
+    change.innerText = 'INTERVIEW'
+    const parentInner = getParent.innerHTML;
+    
+    
+    console.log(change)
+    
+   
+    const interContainer = document.getElementById('interview');
+
+    const newDiv = document.createElement('div');
+    newDiv.innerHTML = `${parentInner}`
+    
+
+    interContainer.appendChild(newDiv);
+
+    const interCount = document.getElementById('inter-count');
+    let interCountNum = Number(interCount.innerText);
+    interCountNum++;
+    interCount.innerText = interCountNum;
+
+getParent.querySelector('.statuss').classList.remove('statuss');
+   
+
+    
+}
