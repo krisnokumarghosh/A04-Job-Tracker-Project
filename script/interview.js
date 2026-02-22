@@ -23,7 +23,7 @@ document.getElementById('interview').addEventListener('click', function(event){
       }
       else if(event.target.classList.contains('rej-btn')){
         const parent2 = event.target.parentNode.parentNode.parentNode;
-        parent2.remove(parent2);
+        parent2.classList.add('hidden');
         console.log(parent2);
 
         const intTitleCount = document.getElementById('int-title-count');
