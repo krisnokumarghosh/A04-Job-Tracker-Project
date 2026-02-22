@@ -24,11 +24,17 @@
         *{
             font-family: "Geist", sans-serif;
         }
+
+        @media screen and (max-width: 576px) {
+            header{
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen bg-gray-100 ">
-    <header class="border-b-1 border-gray-300 space-y-[20px] py-[40px] w-[80%] mx-auto sticky top-0 bg-gray-100">
-        <h1 class="text-[#002C5C] font-bold text-[32px]">Job Application Tracker</h1>
+    <header class="border-b-1 border-gray-300 space-y-[20px] py-[40px] w-[80%] mx-auto sticky top-0 bg-gray-100 ">
+        <h1 class="text-[#002C5C] font-bold text-[32px] ">Job Application Tracker</h1>
         <div class="grid grid-cols-3 gap-[16px]">
             <div class="bg-[#FFFFFF] p-[20px] space-y-[15px] rounded-lg">
                 <p class="text-[#323B49] font-medium text-[14px]">Total</p>
