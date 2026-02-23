@@ -51,6 +51,8 @@ function interBtn (id){
      change.classList.remove('text-[#002C5C]');
      change.classList.remove('text-red-500');
     change.classList.add('text-green-500');
+    getParent.classList.remove('border-l-3' , 'border-red-500' ,'rounded-lg');
+    getParent.classList.add('border-l-3' , 'border-green-500' ,'rounded-lg');
     const parentInner = getParent.innerHTML;
     
     const interContainer = document.getElementById('interview');
@@ -84,6 +86,7 @@ function rejectBtn(id){
     change.innerText = 'REJECTED'
     change.classList.remove('text-[#002C5C]');
     change.classList.add('text-red-500');
+    getParent.classList.add('border-l-3' , 'border-red-500' ,'rounded-lg');
     const parentInner = getParent.innerHTML;
  
     const rejectContainer = document.getElementById('rejected');
