@@ -1,6 +1,6 @@
 <h2>1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?</h2>
 
-ANS. = getElementById means getting specific element by specific id name and getElementsByClassName means getting all elements with same class name, it gives html collection.  By querySelector we can get all html items and tags and by querySelectorAll we get all items with same class name and tags, it gives nodelist.
+ANS. = getElementById means getting specific element by specific id name and getElementsByClassName means getting all elements with same class name, it gives html collection.  By querySelector we can get all html items and tags, but only the first item / tag. By querySelectorAll we get all items with same class name and tags, it gives nodelist.
 
 
 <h2>2. How do you create and insert a new element into the DOM?</h2>
