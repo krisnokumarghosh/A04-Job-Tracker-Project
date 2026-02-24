@@ -76,6 +76,18 @@
             <button onclick="showOnly('main-inter-btn') , btnColorMain('main-inter-btn') , availableJobs('int-jb-li')" id="main-inter-btn" class="btn  w-[80px] ">Interview</button>
             <button onclick="showOnly('main-rejec-btn') , btnColorMain('main-rejec-btn') , availableJobs('rej-jb-li')" id="main-rejec-btn" class="btn  w-[80px] ">Rejected</button>
         </div>
+
+         <!-- no job div -->
+         <div id="all-no-job" class="bg-white py-[60px] space-y-[20px] rounded-lg hidden">
+            <div>
+                <img src="./jobs.png" alt="" class="mx-auto">
+            </div>
+            <div class="text-center space-y-[10px]">
+                <h3 class="font-semibold text-[24px] text-[#002C5C]">No jobs available</h3>
+                <p class="text-[#64748B]">Check back soon for new job opportunities</p>
+            </div>
+        </div>
+
         <!-- card div -->
         <div id="all" class="space-y-[30px]">
 
@@ -266,8 +278,11 @@
             </div>
 
         </div>
+
+       
     </section>
 
+     
     <section id="interview"  class="space-y-[20px] py-[40px] w-[80%] mx-auto hidden">
         <div id="int-no-job" class="bg-white py-[60px] space-y-[20px] rounded-lg">
             <div>

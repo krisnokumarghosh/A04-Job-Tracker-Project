@@ -3,11 +3,13 @@ function showOnly (id){
     const allSection = document.getElementById('all');
     const interSection = document.getElementById('interview');
     const rejecSection = document.getElementById('rejected');
+    const allNoJob = document.getElementById('all-no-job');
 
 
     allSection.classList.add('hidden');
     interSection.classList.add('hidden');
     rejecSection.classList.add('hidden');
+    allNoJob.classList.add('hidden')
 
 
     const selected = document.getElementById(id);
@@ -129,7 +131,21 @@ document.getElementById('all').addEventListener('click' , function(event){
         let allTitleCountNum = Number(allTitleCount.innerText);
         allTitleCountNum--;
         allTitleCount.innerText = allTitleCountNum;
+
+        const allNoJob = document.getElementById('all-no-job');
+        if(allCountNum == '0'){
+            allNoJob.classList.remove('hidden');
+        }
     }
 })
 
 
+document.getElementById('all-btn').addEventListener('click', function(){
+    const allNoJob = document.getElementById('all-no-job');
+     const allCount = document.getElementById('all-count');
+        let allCountNum = Number(allCount.innerText);
+        if(allCountNum == '0'){
+            allNoJob.classList.remove('hidden');
+        }
+
+})
